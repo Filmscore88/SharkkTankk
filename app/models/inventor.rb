@@ -1,0 +1,2 @@
+class Inventor < ApplicationRecord
+end
