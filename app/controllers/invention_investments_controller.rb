@@ -1,0 +1,2 @@
+class InventionInvestmentsController < ApplicationController
+end

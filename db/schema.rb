@@ -10,14 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_04_155714) do
+ActiveRecord::Schema.define(version: 2019_06_04_171635) do
+
+  create_table "invention_investments", force: :cascade do |t|
+    t.string "amount"
+    t.integer "inventor_id"
+    t.integer "investor_id"
+    t.integer "invention_id"
+  end
 
   create_table "inventions", force: :cascade do |t|
     t.string "name"
     t.integer "inventor_id"
-    t.integer "investor_id"
     t.datetime "updated_at", null: false
     t.datetime "created_at"
+    t.string "description"
   end
 
   create_table "inventors", force: :cascade do |t|
