@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :invention_investments
   resources :inventions
-  resources :invention__skips
   resources :inventors
   resources :investors
   root 'inventions#index'

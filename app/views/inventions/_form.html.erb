@@ -1,0 +1,12 @@
+<%= form_for invention do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br />
+  <%= f.label :description %>
+  <%= f.text_field :description %><br />
+  <%= f.label :created_at %>
+  <%= f.text_field :created_at %><br />
+  <%= f.label :inventor_id %>
+  <%= f.number_field :inventor_id %><br />
+  <br />
+  <%= f.submit %>
+<% end %>
