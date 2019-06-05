@@ -6,11 +6,11 @@ class InventionsController < ApplicationController
 
   def new
     @invention= Invention.new
+
   end
 
   def create
-    @invention= Invention.new(invention_params)
-    @invention.save
+    @invention= Invention.create(invention_params)
     if @invention
       redirect_to invention_path(@invention)
     else
@@ -20,7 +20,6 @@ class InventionsController < ApplicationController
 
   def show
     @invention= Invention.find_by(invention_params)
-
   end
 
   def edit
@@ -33,7 +32,8 @@ class InventionsController < ApplicationController
   private
 
   def invention_params
-    params.require(:invention).permit(:name, :inventor_id, :created_at, :description)
+
+    params.require(:invention).permit(:name, :created_at, :description, :inventor_id)
   end
 
 end

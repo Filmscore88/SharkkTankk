@@ -4,7 +4,7 @@ class CreateInventors < ActiveRecord::Migration[5.2]
       t.string :user_name
       t.string :password_digest
       t.string :email
-      t.string :demo_link 
+      t.string :demo_link
 
       t.timestamps null: false
     end
