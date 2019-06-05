@@ -1,0 +1,130 @@
+body.users\/registrations_new .main, body.users\/registrations_new_step_one .main, body.users\/registrations_new_step_two .main, body.users\/registrations_create .main, body.static_content_welcome .main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    max-width: unset;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+.main.mod-home-page {
+    max-width: 100%;
+}
+.flexbox .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+}
+.main.mod-home-page {
+    max-width: 100%;
+}
+.flexbox .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+}
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+    display: block;
+}
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+    display: block;
+}
+* {
+    box-sizing: border-box;
+}
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+* {
+    box-sizing: border-box;
+}
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+user agent stylesheet
+main {
+    display: block;
+}
+body {
+    -webkit-font-feature-settings: 'kern', 'liga', 'pnum';
+    font-feature-settings: 'kern', 'liga', 'pnum';
+    background-color: #F1EFEA;
+    color: #27374c;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+body {
+    padding-top: 70px;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+body {
+    -webkit-font-feature-settings: 'kern', 'liga', 'pnum';
+    font-feature-settings: 'kern', 'liga', 'pnum';
+    background-color: #F1EFEA;
+    color: #27374c;
+    font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+body {
+    padding-top: 70px;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+user agent stylesheet
+html {
+    color: -internal-root-color;
+}
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+*, *::after, *::before {
+    box-sizing: inherit;
+}
