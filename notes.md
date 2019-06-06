@@ -1,4 +1,6 @@
 
+before_action autheticaion_required
+when creating new inventor or investor create session
 
 add resource functionality for nested forms
 
