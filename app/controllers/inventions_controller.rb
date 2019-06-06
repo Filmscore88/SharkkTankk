@@ -19,7 +19,7 @@ class InventionsController < ApplicationController
   end
 
   def show
-    @invention= Invention.find_by(invention_params)
+    @invention= Invention.find_by(id: params[:id])
   end
 
   def edit
@@ -33,7 +33,7 @@ class InventionsController < ApplicationController
 
   def invention_params
 
-    params.require(:invention).permit(:name, :created_at, :description, :inventor_id)
+    params.require(:invention).permit(:id, :name, :created_at, :description, :inventor_id)
   end
 
 end

@@ -22,7 +22,10 @@ class InventionInvestmentsController < ApplicationController
   end
 
   def index
+
     @invention_investments= InventionInvestment.all
+
+
   end
 
   private

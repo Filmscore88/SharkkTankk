@@ -1,7 +1,7 @@
 <ul>
   <% @invention_investments.each do |inv| %>
     <li><%= link_to inv.invention.name, invention_path(inv.invention)%> </li>
-    <li><%= link_to inv.investor.name, investor_path(inv.investor)%> </li>
-    <li><%= link_to inv.invention.inventor.user_name, inventor_path(inv.invention.inventor)%> </li>
+    <li><!--%= link_to inv.investor.name, investor_path(inv.investor)%--> </li>
+    <li><!--%= link_to inv.invention.inventor.user_name, inventor_path(inv.invention.inventor)%--> </li>
   <% end %>
 </ul>
