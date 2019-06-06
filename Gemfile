@@ -7,6 +7,9 @@ ruby '2.6.1'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'
 gem 'pry'
 gem 'bcrypt'
 # Use Puma as the app server

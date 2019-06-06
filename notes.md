@@ -1,16 +1,17 @@
 
-create investmentinvestemnts.new form
+
 add resource functionality for nested forms
-add authenticaton functionality for forms
+
 get rid of uneeded attributes for inventions (updated at)
 
-investor= II create/edit, only view  any index or show page
-inventor= Invention create/edit, only view any index or show page
 
 Establish Authentication
 Establish Authorization
+
 Create Admin Features
+
 Validations for All Models
+
 Routes
 Views
 Forms
@@ -21,3 +22,5 @@ Scoping
 Your forms should correctly display validation errors. a. Your fields should be enclosed within a fields_with_errors class b. Error messages describing the validation failures must be present within the view.
 
 your_attribute.strftime("%m/%d/%Y")   #=> "11/19/2007"
+
+1-
