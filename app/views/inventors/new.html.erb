@@ -1,0 +1,14 @@
+
+<h1>Sign Up</h1>
+<%= form_for @inventor do |f| %>
+  <%= f.label :user_name %>
+  <%= f.text_field :user_name %><br />
+  <%= f.label :password %>
+  <%= f.password_field :password %><br />
+  <%= f.label :email %>
+  <%= f.text_field :email %><br />
+  <%= f.label :demo_link %>
+  <%= f.text_field :demo_link %><br />
+  <br />
+  <%= f.submit %>
+<% end %>

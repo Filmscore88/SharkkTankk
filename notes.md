@@ -1,7 +1,12 @@
 
+create investmentinvestemnts.new form
+add resource functionality for nested forms
+add authenticaton functionality for forms
+get rid of uneeded attributes for inventions (updated at)
 
+investor= II create/edit, only view  any index or show page
+inventor= Invention create/edit, only view any index or show page
 
-Grab CSS for style you want for your webapp
 Establish Authentication
 Establish Authorization
 Create Admin Features
