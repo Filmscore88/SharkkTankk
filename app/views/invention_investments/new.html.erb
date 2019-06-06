@@ -1,0 +1,13 @@
+<h1>New InventionInvestment</h1>
+<%= form_for @invention_investment do |f| %>
+  <%= f.label :amount %>
+  <%= f.text_field :amount %><br />
+  <%= f.label :investor_id %>
+  <%= f.number_field :investor_id %><br />
+  <%= f.label :inventor_id %>
+  <%= f.number_field :inventor_id %><br />
+  <%= f.label :invention_id %>
+  <%= f.number_field :invention_id %><br />
+  <br />
+  <%= f.submit %>
+<% end %>
