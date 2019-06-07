@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_04_171635) do
+ActiveRecord::Schema.define(version: 2019_06_07_160332) do
 
   create_table "invention_investments", force: :cascade do |t|
     t.string "amount"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_06_04_171635) do
     t.string "demo_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "uid"
   end
 
   create_table "investors", force: :cascade do |t|
