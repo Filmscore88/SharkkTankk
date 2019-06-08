@@ -1,9 +1,6 @@
 class InvestorsController < ApplicationController
 
-  def home
-    render :welcome
 
-  end
   def new
     @investor= Investor.new
 

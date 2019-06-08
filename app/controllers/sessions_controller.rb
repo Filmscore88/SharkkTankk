@@ -4,21 +4,30 @@ class SessionsController < ApplicationController
 
   end
 
+  def investor_new
+  end
+
+
 
   def create
 
    if auth_hash= request.env["omniauth.auth"]
 	    inventor= Inventor.find_or_create_by(auth_hash)
-	    redirect_to root_path
+      session[:inventor_id]= inventor.id
+	    redirect_to inventor_path(inventor)
 	 else
-	   inventor=Inventor.find_by(email: params[:email])
+	   inventor=Inventor.find_by(user_name: params[:user_name])
 	   if inventor && inventor.authenticate(params[:password])
 
-		    session[:user_id]= inventor.id
+		    session[:inventor_id]= inventor.id
 		    redirect_to root_path
 	   else
 	      render 'sessions/new'
 	   end
+  end
+
+  def investor_create
+
   end
 end
 
@@ -32,6 +41,9 @@ end
     #end
   end
 
+  def investor_destroy
+
+  end
 
 
 end

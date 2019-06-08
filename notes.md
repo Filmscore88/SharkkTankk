@@ -1,4 +1,4 @@
-
+I want to login succesfully through fb and sign up for inventors && regular create method inventors and investors
 before_action autheticaion_required
 when creating new inventor or investor create session
 
