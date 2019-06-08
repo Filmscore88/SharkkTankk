@@ -4,27 +4,34 @@ class SessionsController < ApplicationController
 
   end
 
+
   def create
-    @inventor = Inventor.find_or_create_by(uid: auth['uid']) do |u|
-      u.user_name = auth['info']['name']
-      u.email = auth['info']['email']
-    end
 
-    session[:user_id] = @inventor.id
+   if auth_hash= request.env["omniauth.auth"]
+	    inventor= Inventor.find_or_create_by(auth_hash)
+	    redirect_to root_path
+	 else
+	   inventor=Inventor.find_by(email: params[:email])
+	   if inventor && inventor.authenticate(params[:password])
 
-    redirect_to root_url
+		    session[:user_id]= inventor.id
+		    redirect_to root_path
+	   else
+	      render 'sessions/new'
+	   end
   end
+end
+
+
+
 
   def destroy
     #if current_user
-      session.delete :user_id
+      session.delete :inventor_id
       redirect_to root_url
     #end
   end
 
-  private
 
-  def auth
-    request.env['omniauth.auth']
-  end
+
 end

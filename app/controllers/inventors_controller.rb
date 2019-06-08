@@ -1,5 +1,11 @@
 class InventorsController < ApplicationController
 
+  def home
+    render :welcome
+
+
+  end
+
   def new
     @inventor= Inventor.new
   end

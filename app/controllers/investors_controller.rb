@@ -1,5 +1,9 @@
 class InvestorsController < ApplicationController
 
+  def home
+    render :welcome
+
+  end
   def new
     @investor= Investor.new
 
@@ -15,7 +19,7 @@ class InvestorsController < ApplicationController
   end
 
   def show
-    
+
     @investor= Investor.find_by(id: params[:id])
 
 

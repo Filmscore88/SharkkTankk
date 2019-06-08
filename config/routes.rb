@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   resources :inventors
   resources :investors
 
+
   get '/signin', to: 'sessions#new'
-  #post '/signin', to: 'sessions#create'
+  post '/signin', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
 
