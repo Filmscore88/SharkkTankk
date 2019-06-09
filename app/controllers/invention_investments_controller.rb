@@ -1,10 +1,10 @@
 class InventionInvestmentsController < ApplicationController
   def new
-    @invention_investment= InventionInvestment.new
+    @invention_investment= InventionInvestment.new(investor_id: params[:investor_id])
   end
 
   def create
-    #binding.pry
+    
     @invention_investment= InventionInvestment.create(invention_investment_params)
     if @invention_investment
 
@@ -31,7 +31,7 @@ class InventionInvestmentsController < ApplicationController
   private
 
   def invention_investment_params
-    params.require(:invention_investment).permit(:id, :amount, :investor_id, :invention_id, :inventor_id)
+    params.require(:invention_investment).permit(:id, :amount, :investor_id, :invention_id)
   end
 
 end

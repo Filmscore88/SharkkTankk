@@ -1,2 +1,3 @@
 <h1>Welcome <%= @investor.name %></h1>
-<p>email: <%= @investor.email %></p>
+
+<%= link_to 'Create new InventionInvestment', new_investor_invention_investment_path(@investor)%>

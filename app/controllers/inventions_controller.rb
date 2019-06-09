@@ -29,6 +29,8 @@ class InventionsController < ApplicationController
   end
 
   def edit
+    @invention= Invention.new(inventor_id: params[:inventor_id])
+
   end
 
   def update

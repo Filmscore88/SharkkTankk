@@ -1,2 +1,11 @@
 <h1>Edit Invention</h1>
-<%= render partial: 'form', locals: {invention: @invention} %>
+<%= form_for @invention do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br />
+  <%= f.label :description %>
+  <%= f.text_field :description %><br />
+  <%= f.hidden_field :inventor_id %>
+
+  <br />
+  <%= f.submit %>
+<% end %>

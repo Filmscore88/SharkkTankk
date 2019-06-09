@@ -2,12 +2,8 @@
 <%= form_for @invention_investment do |f| %>
   <%= f.label :amount %>
   <%= f.text_field :amount %><br />
-  <%= f.label :investor_id %>
-  <%= f.number_field :investor_id %><br />
-  <%= f.label :inventor_id %>
-  <%= f.number_field :inventor_id %><br />
-  <%= f.label :invention_id %>
-  <%= f.number_field :invention_id %><br />
+  <%= f.hidden_field :investor_id %><br />
+  <%= f.collection_select :invention_id, Invention.all, :id, :name %>
   <br />
   <%= f.submit %>
 <% end %>

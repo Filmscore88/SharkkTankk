@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 resources :inventors do
   resources :inventions
 end
-resources :inventions 
+resources :inventions, :invention_investments
 
 resources :investors do
   resources :invention_investments
