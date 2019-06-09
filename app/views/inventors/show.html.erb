@@ -1,5 +1,12 @@
-<h1>Welcome <%= @inventor.user_name %></h1>
-<p>email: <%= @inventor.email %></p>
-<p>demo_link: <%= @inventor.demo_link %></p>
+<h2>Welcome <%= @inventor.user_name %></h2>
+<h3>Email: <%= @inventor.email %></h3>
+<h3>Inventions:</h3>
+<ul>
+<% if !@inventor.inventions.empty?%>
+  <% @inventor.inventions.each do |inv|%>
+    <li><%= inv.name%></li>
+  <%end%>
+</ul>
+<%end%>
 
 <%= link_to 'Create new Invention', new_inventor_invention_path(@inventor)%>

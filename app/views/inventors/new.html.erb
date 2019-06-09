@@ -1,22 +1,17 @@
-<h1> Inventors</h1>
-<%= link_to('Log in with Facebook!', '/auth/facebook') %>
-            Or
-<%= link_to 'Login With Password', signin_path %>
-<%= link_to "Log Out", logout_path, method: :delete %>
-
-
-
-
-<h1>Sign Up</h1>
+<h1>Inventors</h1>
+<div>
+  <h2>Sign Up With <%= link_to('Facebook', '/auth/facebook') %></h2>
+  <h2> Or <h2>
+  <h2> Create Account</h2>
+</div>
 <%= form_for @inventor do |f| %>
   <%= f.label :user_name %>
   <%= f.text_field :user_name %><br />
   <%= f.label :password %>
   <%= f.password_field :password %><br />
-  <%= f.label :email %>
-  <%= f.text_field :email %><br />
-  <%= f.label :demo_link %>
-  <%= f.text_field :demo_link %><br />
   <br />
   <%= f.submit %>
 <% end %>
+</br>
+
+<p>Already have an Inventor Account? <%= link_to 'Login', signin_path %></p>

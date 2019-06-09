@@ -41,7 +41,7 @@ class SessionsController < ApplicationController
 		    session[:inventor_id]= inventor.id
 
 
-		    redirect_to root_path
+		    redirect_to inventor_path(inventor)
 	   else
 	      render 'sessions/new'
 	   end

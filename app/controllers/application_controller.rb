@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  helper_method :inventor_autheticaion_required, :investor_autheticaion_required, :investor_logged_in?, :inventor_logged_in?, :current_inventor, :current_investor, :inventor_only, :investor_only
 
-  def  autheticaion_required
-    if !logged_in?
+
+  def  inventor_autheticaion_required
+    if !inventor_logged_in?
       redirect_to login_path
     end
   end
@@ -14,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
 
-  def logged_in?
+  def inventor_logged_in?
     !!current_inventor
   end
 
@@ -30,7 +32,17 @@ class ApplicationController < ActionController::Base
     @current_investor||= Investor.find(session[:investor_id]) if session[:investor_id]
   end
 
+  def investor_only
+    unless investor_logged_in? && !inventor_logged_in?
+      flash[:notice] = "You must be an Investor to perform that function!"
+      redirect_to inventor_path(current_inventor)
+    end
+  end
 
-  helper_method :current_user
-
+  def inventor_only
+    unless !investor_logged_in? && inventor_logged_in?
+      flash[:notice] = "You must be an Inventor to perform that function!"
+      redirect_to investor_path(current_investor)
+    end
+  end
 end

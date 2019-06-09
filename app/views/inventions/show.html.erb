@@ -1,3 +1,6 @@
-<h1><%=@invention.name%></h1>
-<p>by <%= link_to @invention.inventor.user_name, inventor_path(@invention.inventor) if @invention.inventor %> (<%= link_to "Edit Post", edit_inventor_invention_path(@invention.inventor, @invention) if @invention.inventor %>)</p>
-<p><%= @invention.description %> </p>
+<h2> Name: <%=@invention.name%></h2>
+<h3>Created By: <%= link_to @invention.inventor.user_name, inventor_path(@invention.inventor) %></h3>
+<h3>Description: <%= @invention.description %> </h3>
+
+<%= link_to "edit", edit_inventor_invention_path(@invention.inventor, @invention) if @invention.inventor %></br>
+<%= link_to 'create new', new_inventor_invention_path(@invention.inventor)%></br>
