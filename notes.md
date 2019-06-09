@@ -1,10 +1,6 @@
 before_action autheticaion_required
-when creating new inventor or investor create session
-fix inventor login to use email instead
-add resource functionality for nested forms
 
-get rid of unneeded attributes for inventions (updated at)
-
+!!!!!In the inventor inventions show page, add investments with investor name and investment amount !!!!!
 
 Establish Authentication
 Establish Authorization

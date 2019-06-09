@@ -4,9 +4,11 @@
 <ul>
 <% if !@inventor.inventions.empty?%>
   <% @inventor.inventions.each do |inv|%>
-    <li><%= inv.name%></li>
+    <li><%= link_to inv.name, inventor_invention_path(inv.inventor, inv)%></li>
   <%end%>
 </ul>
 <%end%>
+<br/>
+<%= link_to 'New invention', new_inventor_invention_path(@inventor)%>/
 
-<%= link_to 'Create new Invention', new_inventor_invention_path(@inventor)%>
+<%= link_to "Log Out", investor_logout_path, method: :delete %>

@@ -1,6 +1,12 @@
 <h1> Inventions</h1>
-<ul>
 <% @inventions.each do |i|%>
-  <li><%= link_to i.name, invention_path(i)%></li>
-</ul>
+<ul>
+  <li>Name: <% if i.inventor.id == current_inventor.id %>
+                <%= link_to i.name, inventor_invention_path(i.inventor, i)%>
+            <%else%>
+                <%= i.name%></li>
+            <%end%>
+  <li>Description: <%= i.description%></li>
+  <li>Created by: <%= i.inventor.user_name%></li>
+</ul><br/>
 <%end%>
