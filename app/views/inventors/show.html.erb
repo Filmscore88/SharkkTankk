@@ -1,3 +1,5 @@
 <h1>Welcome <%= @inventor.user_name %></h1>
 <p>email: <%= @inventor.email %></p>
 <p>demo_link: <%= @inventor.demo_link %></p>
+
+<%= link_to 'Create new Invention', new_inventor_invention_path(@inventor)%>

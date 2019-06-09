@@ -1,17 +1,23 @@
 Rails.application.routes.draw do
 
-  resources :invention_investments
+resources :inventors do
   resources :inventions
-  resources :inventors
-  resources :investors
+end
+resources :inventions 
 
-  get '/homepage', to: 'home#main'
+resources :investors do
+  resources :invention_investments
+end
+
+#resources :inventors, :investors, :invention_investments, :inventions
+
+root 'home#main'
 
 
- get '/investor_signin', to: 'sessions#investor_ new'
+ get '/investor_signin', to: 'sessions#investor_new'
  post '/investor_signin', to: 'sessions#investor_create'
  delete '/investor_logout', to: 'sessions#investor_destroy'
- 
+
   get '/signin', to: 'sessions#new'
   post '/signin', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'

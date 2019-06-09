@@ -3,8 +3,7 @@ class CreateInventions < ActiveRecord::Migration[5.2]
     create_table :inventions do |t|
       t.string :name
       t.integer :inventor_id
-      t.integer :investor_id
-      t.timestamps null: false
+      t.string :description
     end
   end
 end

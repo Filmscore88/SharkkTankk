@@ -5,14 +5,20 @@ class InventionsController < ApplicationController
   end
 
   def new
-    @invention= Invention.new
+
+    @invention= Invention.new(inventor_id: params[:inventor_id])
 
   end
 
   def create
-    @invention= Invention.create(invention_params)
+    @inventor= Inventor.find_by(id: params[:invention][:inventor_id])
+
+    @invention= @inventor.inventions.build(invention_params)
+    @invention.save
+
     if @invention
-      redirect_to invention_path(@invention)
+
+      redirect_to inventor_invention_path(@inventor, @invention)
     else
       render :new
     end
@@ -33,7 +39,7 @@ class InventionsController < ApplicationController
 
   def invention_params
 
-    params.require(:invention).permit(:id, :name, :created_at, :description, :inventor_id)
+    params.require(:invention).permit(:id, :name, :description, :inventor_id)
   end
 
 end
