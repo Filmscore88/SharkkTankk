@@ -15,6 +15,7 @@ class InventionsController < ApplicationController
 
     @invention= @inventor.inventions.build(invention_params)
     @invention.save
+  
 
     if @invention
 
