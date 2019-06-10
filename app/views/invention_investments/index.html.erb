@@ -1,12 +1,10 @@
 <h1> Invention Investments</h1>
 <ul>
   <% @invention_investments.each do |inv| %>
-  <li>
-      <%=inv.id%></br>
-      Invention: <%= link_to inv.invention.name, invention_path(inv.invention)%></br>
-      Inventor: <%= link_to inv.invention.inventor.user_name, inventor_path(inv.invention.inventor)%></br>
-      Invested Amount:$ <%= link_to inv.amount, invention_investment_path(inv)%></br>
-      Investor: <%= link_to inv.investor.name, investor_path(inv.investor)%></br>
-  </li>
+      <li>Invention: <%= link_to inv.invention.name, invention_path(inv.invention)%></li><li></br>
+      <li>Inventor: <%= link_to inv.invention.inventor.user_name, inventor_path(inv.invention.inventor)%></li></br>
+      <li>Invested Amount:$ <%= link_to inv.amount, invention_investment_path(inv)%></li></br>
+      <li>Investor: <%= link_to inv.investor.name, investor_path(inv.investor)%></li></br>
+      <br/>
 </ul>
   <% end %>

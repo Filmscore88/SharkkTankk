@@ -1,6 +1,13 @@
+Inventor show page only for current_investor, the link to inventor show page on the Invention show page only if current_investor
+
+
 before_action autheticaion_required
 
-!!!!!In the inventor inventions show page, add investments with investor name and investment amount !!!!!
+add the edit functionality for inventions
+
+!!!!!In the inventor inventions show page, add investments with investor name and investment amount, change investment amount to integer so you can a total column for all investment totals!!!!!
+
+delete any attributes not uses
 
 Establish Authentication
 Establish Authorization

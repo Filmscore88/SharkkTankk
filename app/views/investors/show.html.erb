@@ -1,3 +1,14 @@
-<h1>Welcome <%= @investor.name %></h1>
+<h2>Welcome <%= @investor.name %></h2>
+<h3>Investments:</h3>
+<ul>
+<% if !@investor.invention_investments.empty?%>
+  <% @investor.invention_investments.each do |inv|%>
+    <li>Invention: <%=inv.invention.name%></li>
+    <li>Invested:$ <%= link_to inv.amount, investor_invention_investment_path(inv.investor, inv)%></li> <br/>
+  <%end%>
+</ul>
+<%end%>
+<br/>
+<%= link_to 'New Investment', new_investor_invention_investment_path(@investor)%>/
 
-<%= link_to 'Create new InventionInvestment', new_investor_invention_investment_path(@investor)%>
+<%= link_to "Log Out", investor_logout_path, method: :delete %>
