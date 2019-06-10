@@ -13,3 +13,11 @@
  *= require 'shark_tank_base'
 
  */
+
+ .field_with_errors input[type='text']{
+   border: 1px solid red;
+ }
+
+ .field_with_errors input[type='password']{
+   border: 1px solid red;
+ }

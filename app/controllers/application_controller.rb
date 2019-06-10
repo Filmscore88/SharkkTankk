@@ -15,9 +15,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def current_user
+    key = sesion[:identity] + '_id'
+    binding.pry
+   @current_user | @current_user = session[:identity].constantize.find(sessions[key])
+  end
 
   def inventor_logged_in?
-    !!current_inventor
+    binding.pry
+    session[:identity]== "Inventor"
+    #!!current_inventor
   end
 
   def investor_logged_in?

@@ -2,5 +2,5 @@
 <h3>Created By: <%= link_to @invention.inventor.user_name, inventor_path(@invention.inventor) %></h3>
 <h3>Description: <%= @invention.description %> </h3>
 
-<%= link_to "edit", edit_inventor_invention_path(@invention.inventor, @invention) if @invention.inventor %></br>
+<%= link_to "edit", edit_inventor_invention_path(@invention.inventor, @invention)%></br>
 <%= link_to 'create new', new_inventor_invention_path(@invention.inventor)%></br>

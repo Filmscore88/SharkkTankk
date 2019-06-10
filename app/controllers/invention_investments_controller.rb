@@ -19,7 +19,6 @@ class InventionInvestmentsController < ApplicationController
   end
 
   def show
-    #binding.pry
     @invention_investment= InventionInvestment.find_by(id: params[:id])
 
 

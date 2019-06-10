@@ -1,4 +1,5 @@
 class InventionsController < ApplicationController
+  before_action :inventor_logged_in?, except: [:index, :show]
 
   def index
     @inventions= Invention.all
@@ -15,7 +16,7 @@ class InventionsController < ApplicationController
 
     @invention= @inventor.inventions.build(invention_params)
     @invention.save
-  
+
 
     if @invention
 

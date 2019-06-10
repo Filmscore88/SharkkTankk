@@ -1,7 +1,12 @@
 Inventor show page only for current_investor, the link to inventor show page on the Invention show page only if current_investor
 
+Last thing, if there is time in the invetion_investments index page, try adding total amounts seperated by investors and keep the list limited to 1 occurence of the invention. Since each item listed is actually a transaction, there can be multiple on the same invention
 
 before_action autheticaion_required
+
+fix authenticate password issue
+
+add investments to inventions show page
 
 add the edit functionality for inventions
 
@@ -9,22 +14,24 @@ add the edit functionality for inventions
 
 delete any attributes not uses
 
-Establish Authentication
-Establish Authorization
 
 
-Validations for All Models
 
-Routes
-Views
-Forms
-Any more controllers?(Sessions, Admin etc..)
-OmniAuth Facebook
-Nesting
-Scoping
-Your forms should correctly display validation errors. a. Your fields should be enclosed within a fields_with_errors class b. Error messages describing the validation failures must be present within the view.
 
-your_attribute.strftime("%m/%d/%Y")   #=> "11/19/2007"
+
+
+
+
+1-Authentication password and login for everything
+2-Authorization for who gets to see what
+3-Scoping
+
+4-Your forms should correctly display validation errors. a. Your fields should be enclosed within a fields_with_errors class b. Error messages describing the validation failures must be present within the view
+
+5-Validations
+6-HTML CSS
+7-Blog/Video
+
 
 
 <div class="h30 pt4 px3 mb1px">
