@@ -5,8 +5,8 @@ class InventionsController < ApplicationController
     @inventions= Invention.all
   end
 
+
   def new
-  
     if params[:inventor_id].to_i != current_user.id
 
       redirect_to inventions_path

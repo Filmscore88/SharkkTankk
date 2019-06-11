@@ -1,7 +1,7 @@
 <h1>New Invention Investment</h1>
 <%= form_for @invention_investment do |f| %>
   <%= f.label :amount %>
-  <%= f.text_field :amount %><br />
+  <%= f.number_field :amount %><br />
   <%= f.hidden_field :investor_id %><br />
   <%= f.collection_select :invention_id, Invention.all, :id, :name %>
   <br />

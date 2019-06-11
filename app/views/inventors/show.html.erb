@@ -2,13 +2,9 @@
 <h3>Email: <%= @inventor.email %></h3>
 <h3>Inventions:</h3>
 <ul>
-<% if !@inventor.inventions.empty?%>
   <% @inventor.inventions.each do |inv|%>
     <li><%= link_to inv.name, inventor_invention_path(inv.inventor, inv)%></li>
   <%end%>
 </ul>
-<%end%>
 <br/>
-<%= link_to 'New invention', new_inventor_invention_path(@inventor)%>/
-
-<%= link_to "Log Out", inventor_logout_path, method: :delete %>
+<%= link_to 'New invention', new_inventor_invention_path(@inventor)%>

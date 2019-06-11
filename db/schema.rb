@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2019_06_04_171635) do
 
   create_table "invention_investments", force: :cascade do |t|
-    t.string "amount"
+    t.integer "amount"
     t.integer "investor_id"
     t.integer "invention_id"
   end
@@ -27,12 +27,11 @@ ActiveRecord::Schema.define(version: 2019_06_04_171635) do
   create_table "inventors", force: :cascade do |t|
     t.string "user_name"
     t.string "password_digest"
-    t.string "email"
-    t.string "demo_link"
   end
 
   create_table "investors", force: :cascade do |t|
     t.string "name"
+    t.string "email"
     t.string "password_digest"
   end
 
