@@ -1,6 +1,6 @@
 <h1>Inventors Login</h1>
     <br>
-    <%= form_tag("/signin", method: "post") do %>
+    <%= form_tag("/inventor_signin", method: "post") do %>
     <h2>Username:</h2>
     <%= collection_select(:inventor, :user_name, Inventor.all, :user_name, :user_name) %><br/>
     <h2>Password:</h2>
@@ -8,6 +8,3 @@
     <%= password_field_tag :"inventor[password]" %>
     <%= submit_tag "Sign In"%><br/>
     <% end %>
-
-
-  

@@ -8,6 +8,8 @@ class InventorsController < ApplicationController
 
   def create
     @inventor= Inventor.create(inventor_params)
+    session[:inventor_id]= @inventor.id
+    session[:identity]="Inventor"
 
     if @inventor
       redirect_to inventor_path(@inventor)

@@ -21,13 +21,14 @@ delete any attributes not uses
 
 
 
-
+1_- Nav bar
 1-Authentication password and login for everything
 2-Authorization for who gets to see what
 3-Scoping
 
 4-Your forms should correctly display validation errors. a. Your fields should be enclosed within a fields_with_errors class b. Error messages describing the validation failures must be present within the view
 
+4- Strong params sessions
 5-Validations
 6-HTML CSS
 7-Blog/Video

@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :inventor_autheticaion_required, :investor_autheticaion_required, :investor_logged_in?, :inventor_logged_in?, :current_inventor, :current_investor, :inventor_only, :investor_only
+  helper_method :inventor_autheticaion_required, :investor_autheticaion_required, :investor_logged_in?, :inventor_logged_in?, :current_user, :inventor_only, :investor_only
 
 
   def  inventor_autheticaion_required
@@ -16,28 +16,19 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    key = sesion[:identity] + '_id'
-    binding.pry
-   @current_user | @current_user = session[:identity].constantize.find(sessions[key])
+    key = session[:identity].downcase + '_id'
+   @current_user || @current_user = session[:identity].constantize.find(session[key])
   end
 
   def inventor_logged_in?
-    binding.pry
     session[:identity]== "Inventor"
-    #!!current_inventor
   end
 
   def investor_logged_in?
-    !!current_investor
+    session[:identity]== "Investor"
   end
 
-  def current_inventor
-    @current_inventor||= Inventor.find(session[:inventor_id]) if session[:inventor_id]
-  end
 
-  def current_investor
-    @current_investor||= Investor.find(session[:investor_id]) if session[:investor_id]
-  end
 
   def investor_only
     unless investor_logged_in? && !inventor_logged_in?

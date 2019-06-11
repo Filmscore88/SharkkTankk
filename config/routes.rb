@@ -18,10 +18,10 @@ Rails.application.routes.draw do
   post '/investor_signin', to: 'sessions#investor_create'
   delete '/investor_logout', to: 'sessions#investor_destroy'
 
-  get '/signin', to: 'sessions#new'
-  post '/signin', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  get '/inventor_signin', to: 'sessions#inventor_new'
+  post '/inventor_signin', to: 'sessions#inventor_create'
+  delete '/inventor_logout', to: 'sessions#inventor_destroy'
 
 
-  get '/auth/facebook/callback' => 'sessions#create'
+  get '/auth/facebook/callback' => 'sessions#inventor_create'
 end

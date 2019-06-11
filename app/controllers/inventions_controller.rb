@@ -6,9 +6,13 @@ class InventionsController < ApplicationController
   end
 
   def new
+  
+    if params[:inventor_id].to_i != current_user.id
 
-    @invention= Invention.new(inventor_id: params[:inventor_id])
-
+      redirect_to inventions_path
+    else
+      @invention= Invention.new(inventor_id: params[:inventor_id])
+    end
   end
 
   def create
