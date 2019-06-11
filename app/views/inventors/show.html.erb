@@ -1,9 +1,12 @@
-<h2>Welcome <%= @inventor.user_name %></h2>
+<h2>Name: <%= @inventor.user_name %></h2>
+
 <h3>Inventions:</h3>
+
 <ul>
   <% @inventor.inventions.each do |inv|%>
     <li><%= link_to inv.name, inventor_invention_path(inv.inventor, inv)%></li>
   <%end%>
 </ul>
+
 <br/>
 <%= link_to 'New invention', new_inventor_invention_path(@inventor)%>

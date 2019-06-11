@@ -1,14 +1,13 @@
 class InventorsController < ApplicationController
 
-
-
   def new
     @inventor= Inventor.new
   end
 
+
   def create
-    @inventor= Inventor.create(inventor_params)
-    session[:inventor_id]= @inventor.id
+    inventor= Inventor.create(inventor_params)
+    session[:inventor_id]= inventor.id
     session[:identity]="Inventor"
 
     if @inventor
@@ -18,15 +17,15 @@ class InventorsController < ApplicationController
     end
   end
 
+
   def show
-
     @inventor= Inventor.find_by(id: params[:id])
-
   end
+
 
   private
 
   def inventor_params
-    params.require(:inventor).permit(:id, :user_name, :password, :email, :demo_link)
+    params.require(:inventor).permit(:user_name, :password)
   end
 end

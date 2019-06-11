@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_04_171635) do
+ActiveRecord::Schema.define(version: 2019_06_11_145025) do
 
   create_table "invention_investments", force: :cascade do |t|
     t.integer "amount"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2019_06_04_171635) do
     t.string "name"
     t.integer "inventor_id"
     t.string "description"
+    t.boolean "invested?"
   end
 
   create_table "inventors", force: :cascade do |t|

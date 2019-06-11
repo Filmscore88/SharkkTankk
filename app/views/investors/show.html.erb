@@ -1,5 +1,7 @@
-<h2>Welcome <%= @investor.name %></h2>
+<h2>Name: <%= @investor.name %></h2>
+
 <h3>Investments:</h3>
+
 <ul>
   <% @investor.invention_investments.each do |inv|%>
     <li>Invention: <%=inv.invention.name%></li>
@@ -7,4 +9,5 @@
   <%end%>
 </ul>
 <br/>
+
 <%= link_to 'New Investment', new_investor_invention_investment_path(@investor)%>

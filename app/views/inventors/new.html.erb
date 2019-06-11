@@ -1,9 +1,11 @@
 <h1>Inventors</h1>
+
 <div>
   <h2>Sign Up With <%= link_to('Facebook', '/auth/facebook') %></h2>
   <h2> Or <h2>
   <h2> Create Account</h2>
 </div>
+
 <%= form_for @inventor do |f| %>
   <%= f.label :user_name %>
   <%= f.text_field :user_name %><br />
