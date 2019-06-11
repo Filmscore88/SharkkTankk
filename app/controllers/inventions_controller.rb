@@ -34,12 +34,6 @@ class InventionsController < ApplicationController
     @invention= Invention.find_by(id: params[:id])
   end
 
-  def edit
-    @invention= Invention.new(inventor_id: params[:inventor_id])
-
-  end
-
-  def update
 
   end
 
@@ -47,7 +41,5 @@ class InventionsController < ApplicationController
 
   def invention_params
 
-    params.require(:invention).permit(:id, :name, :description, :inventor_id)
+    params.require(:invention).permit(:name, :description, :inventor_id)
   end
-
-end

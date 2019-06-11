@@ -1,6 +1,18 @@
 class InventionInvestmentsController < ApplicationController
+  before_action :investor_logged_in?, except: [:index, :show]
+
+
+  def index
+    @invention_investments= InventionInvestment.all
+  end
+
   def new
+    if params[:investor_id].to_i != current_user.id
+      redirect_to invention_investments_path
+    else
+
     @invention_investment= InventionInvestment.new(investor_id: params[:investor_id])
+  end
   end
 
   def create
@@ -20,13 +32,6 @@ class InventionInvestmentsController < ApplicationController
 
   def show
     @invention_investment= InventionInvestment.find_by(id: params[:id])
-
-
-  end
-
-  def index
-
-    @invention_investments= InventionInvestment.all
 
 
   end
