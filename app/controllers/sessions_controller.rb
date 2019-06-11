@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
 
   def inventor_new
-    
+
   end
 
 
@@ -53,7 +53,8 @@ end
     if investor && investor.authenticate(params[:investor][:password])
        session[:investor_id]= investor.id
        session[:identity]="Investor"
-       redirect_to root_path
+       redirect_to investor_path(investor)
+
     else
        render 'sessions/investor_new'
     end

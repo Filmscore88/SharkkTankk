@@ -31,16 +31,16 @@ class ApplicationController < ActionController::Base
 
 
   def investor_only
-    unless investor_logged_in? && !inventor_logged_in?
+    unless investor_logged_in?
       flash[:notice] = "You must be an Investor to perform that function!"
-      redirect_to inventor_path(current_inventor)
+      redirect_to  invention_investments_path
     end
   end
 
   def inventor_only
-    unless !investor_logged_in? && inventor_logged_in?
+    unless inventor_logged_in?
       flash[:notice] = "You must be an Inventor to perform that function!"
-      redirect_to investor_path(current_investor)
+      redirect_to inventions_path
     end
   end
 end

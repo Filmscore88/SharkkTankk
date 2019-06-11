@@ -1,5 +1,5 @@
 class InventionsController < ApplicationController
-  before_action :inventor_logged_in?, except: [:index, :show]
+  before_action :inventor_only, except: [:index, :show]
 
   def index
     @inventions= Invention.all

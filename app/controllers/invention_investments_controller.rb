@@ -12,7 +12,7 @@ class InventionInvestmentsController < ApplicationController
     else
 
     @invention_investment= InventionInvestment.new(investor_id: params[:investor_id])
-  end
+    end
   end
 
   def create
@@ -39,7 +39,7 @@ class InventionInvestmentsController < ApplicationController
   private
 
   def invention_investment_params
-    params.require(:invention_investment).permit(:id, :amount, :investor_id, :invention_id)
+    params.require(:invention_investment).permit(:amount, :investor_id, :invention_id)
   end
 
 end
