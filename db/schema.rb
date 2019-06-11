@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2019_06_11_145025) do
     t.string "name"
     t.integer "inventor_id"
     t.string "description"
-    t.boolean "invested?"
+    t.boolean "invested?", default: false, null: false
   end
 
   create_table "inventors", force: :cascade do |t|

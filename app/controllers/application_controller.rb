@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     key = session[:identity].downcase + '_id'
-   @current_user || @current_user = session[:identity].constantize.find(session[key])
+    @current_user || @current_user = session[:identity].constantize.find(session[key])
   end
 
   def inventor_logged_in?
