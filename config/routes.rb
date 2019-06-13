@@ -23,5 +23,5 @@ Rails.application.routes.draw do
   delete '/inventor_logout', to: 'sessions#inventor_destroy'
 
 
-  get '/auth/facebook/callback' => 'sessions#inventor_create'
+  get '/auth/facebook/callback' => 'sessions#facebook_create'
 end

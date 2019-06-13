@@ -18,13 +18,12 @@ class InventionsController < ApplicationController
   def create
     @inventor= Inventor.find_by(id: params[:invention][:inventor_id])
     @invention= @inventor.inventions.build(invention_params)
-    @invention.save
-    binding.pry
-    if @invention
-      redirect_to inventor_invention_path(@inventor, @invention)
-    else
-      render :new
-    end
+      if @invention.save
+        redirect_to inventor_invention_path(@inventor, @invention)
+      else
+        flash[:notice]= 'ERROR: Invalid Entry'
+        render :new
+      end
   end
 
 

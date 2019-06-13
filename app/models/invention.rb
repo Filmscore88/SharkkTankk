@@ -3,6 +3,7 @@ class Invention < ApplicationRecord
   has_many :invention_investments
   has_many :investors, through: :invention_investments
   scope :invested, -> { where(invested?: true) }
+  validates :name, :presence => :true
   validates :description, :presence => :true
 
 end

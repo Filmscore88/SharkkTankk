@@ -7,15 +7,13 @@ class InvestorsController < ApplicationController
 
 
   def create
-    @investor= Investor.create(investor_params)
-    session[:investor_id]= @investor.id
-    session[:identity]="Investor"
-
-    if @investor
-      redirect_to investor_path(@investor)
-    else
-      render :new
-    end
+    @investor= Investor.new(investor_params)
+      if @investor.save
+        start_investor_session(@investor)
+      else
+        flash[:notice]= 'ERROR: Account was not created'
+        render :new
+      end
   end
 
 

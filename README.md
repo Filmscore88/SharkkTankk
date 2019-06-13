@@ -1,24 +1,34 @@
-# README
+# SharkkTankk
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+If you have seen the show Shark tank, you know it has been a great platform for inventors and investors alike to share their ideas and hope to get one of the investors to buy in on their pitch. Well this is a similar concept where the users (inventors), get to create their inventions and inventors get to choose which inventions to invest in.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+-fork and clone this repo to your local environment
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+```bash
+run bundle install
+```
 
-* Database initialization
+## Usage
 
-* How to run the test suite
+```
+run rails s in your terminal
 
-* Services (job queues, cache servers, search engines, etc.)
+copy and paste the localhost address to your browser, example(https://localhost:3000)
 
-* Deployment instructions
+signup as either a  inventor, or investor.
 
-* ...
+begin making either inventions or investments.
+
+```
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)

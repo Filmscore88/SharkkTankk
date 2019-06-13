@@ -8,7 +8,7 @@ class InventionInvestmentsController < ApplicationController
 
 
   def new
-    if params[:investor_id].to_i != current_user.id
+    if params[:investor_id].to_i != current_user.id\
       redirect_to invention_investments_path
     else
       @invention_investment= InventionInvestment.new(investor_id: params[:investor_id])
@@ -22,15 +22,13 @@ class InventionInvestmentsController < ApplicationController
     @invention.update(invested?: true)
     @invention.invention_investments.build(invention_investment_params)
     @invention_investment= @investor.invention_investments.build(invention_investment_params)
-    @invention_investment.save
 
-
-
-    if @invention_investment
-      redirect_to investor_invention_investment_path(@investor, @invention_investment)
-    else
-      render :new
-    end
+      if @invention_investment.save
+        redirect_to investor_invention_investment_path(@investor, @invention_investment)
+      else
+        flash[:notice]= 'ERROR: Invalid Entry'
+        render :new
+      end
   end
 
 

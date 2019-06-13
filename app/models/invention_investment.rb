@@ -6,4 +6,5 @@ class InventionInvestment < ApplicationRecord
 
 
 
+
 end

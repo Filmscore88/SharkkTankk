@@ -6,15 +6,14 @@ class InventorsController < ApplicationController
 
 
   def create
-    @inventor= Inventor.create(inventor_params)
-    session[:inventor_id]= @inventor.id
-    session[:identity]="Inventor"
-
-    if @inventor
-      redirect_to inventor_path(@inventor)
-    else
-      render :new
-    end
+    @inventor= Inventor.new(inventor_params)
+      if @inventor.save
+        flash[:success] = 'Account created'
+        start_inventor_session(@inventor)
+      else
+        flash[:notice] ='ERROR: Account was not created'
+        render :new
+      end
   end
 
 
