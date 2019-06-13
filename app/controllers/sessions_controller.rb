@@ -39,7 +39,7 @@ class SessionsController < ApplicationController
   def investor_create
     investor=Investor.find_by(name: params[:investor][:name])
     if investor && investor.authenticate(params[:investor][:password])
-      start_inventor_session(investor)
+      start_investor_session(investor)
     else
       flash[:notice]= 'ERROR: Account was not created'
       render 'sessions/investor_new'

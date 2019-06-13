@@ -45,7 +45,8 @@ class ApplicationController < ActionController::Base
   end
 
   def start_investor_session(investor)
-    session[:investor_id]= investor.id && session[:identity]="Investor"
+    session[:investor_id]= investor.id
+    session[:identity]="Investor"
     redirect_to investor_path(investor)
   end
 

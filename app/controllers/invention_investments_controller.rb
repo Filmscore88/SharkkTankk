@@ -8,7 +8,7 @@ class InventionInvestmentsController < ApplicationController
 
 
   def new
-    if params[:investor_id].to_i != current_user.id\
+    if params[:investor_id].to_i != current_user.id
       redirect_to invention_investments_path
     else
       @invention_investment= InventionInvestment.new(investor_id: params[:investor_id])
