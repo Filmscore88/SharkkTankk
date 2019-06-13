@@ -19,7 +19,7 @@ class InventionsController < ApplicationController
     @inventor= Inventor.find_by(id: params[:invention][:inventor_id])
     @invention= @inventor.inventions.build(invention_params)
     @invention.save
-
+    binding.pry
     if @invention
       redirect_to inventor_invention_path(@inventor, @invention)
     else

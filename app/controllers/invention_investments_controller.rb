@@ -19,9 +19,12 @@ class InventionInvestmentsController < ApplicationController
   def create
     @investor= Investor.find_by(id: params[:invention_investment][:investor_id])
     @invention= Invention.find_by(id: params[:invention_investment][:invention_id])
+    @invention.update(invested?: true)
     @invention.invention_investments.build(invention_investment_params)
     @invention_investment= @investor.invention_investments.build(invention_investment_params)
     @invention_investment.save
+
+
 
     if @invention_investment
       redirect_to investor_invention_investment_path(@investor, @invention_investment)

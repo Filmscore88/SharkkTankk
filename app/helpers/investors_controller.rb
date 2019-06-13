@@ -8,6 +8,8 @@ class InvestorsController < ApplicationController
 
   def create
     @investor= Investor.create(investor_params)
+    session[:investor_id]= @investor.id
+    session[:identity]="Investor"
 
     if @investor
       redirect_to investor_path(@investor)
@@ -20,11 +22,11 @@ class InvestorsController < ApplicationController
   def show
     @investor= Investor.find_by(id: params[:id])
   end
-  
+
 
   private
 
   def investor_params
-    params.require(:investor).permit(:name, :password)
+    params.require(:investor).permit(:id, :name, :password)
   end
 end

@@ -6,8 +6,8 @@ class InventorsController < ApplicationController
 
 
   def create
-    inventor= Inventor.create(inventor_params)
-    session[:inventor_id]= inventor.id
+    @inventor= Inventor.create(inventor_params)
+    session[:inventor_id]= @inventor.id
     session[:identity]="Inventor"
 
     if @inventor
@@ -26,6 +26,6 @@ class InventorsController < ApplicationController
   private
 
   def inventor_params
-    params.require(:inventor).permit(:user_name, :password)
+    params.require(:inventor).permit(:id, :user_name, :password)
   end
 end

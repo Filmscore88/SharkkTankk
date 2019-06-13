@@ -40,6 +40,7 @@ class SessionsController < ApplicationController
 
 
   def investor_create
+
     investor=Investor.find_by(name: params[:investor][:name])
 
     if investor && investor.authenticate(params[:investor][:password])
