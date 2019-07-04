@@ -21,7 +21,7 @@ copy and paste the localhost address to your browser, example(https://localhost:
 
 signup as either a  inventor, or investor.
 
-begin making either inventions or investments.
+start creating inventions if you are an inventor, or start making investments if you are an investor
 
 ```
 
