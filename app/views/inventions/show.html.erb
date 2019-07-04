@@ -1,5 +1,5 @@
 <h2>Name: <%=@invention.name%></h2>
-<h3>Created By: <%= link_to @invention.inventor.user_name, inventor_path(@invention.inventor) %></h3>
+<h3>Created By: <%= link_to @invention.user.name, user_path(@invention.user) %></h3>
 <h3>Description: <%= @invention.description %> </h3>
 
-<%= link_to 'create new', new_inventor_invention_path(@invention.inventor)%></br>
+<%= link_to 'create new', new_user_invention_path(@invention.user)%></br>

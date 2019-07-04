@@ -19,22 +19,13 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
 
         <ul class="nav navbar-nav">
-            <% if inventor_logged_in?%>
-              <li><%=link_to'LOGOUT', inventor_logout_path, method: :delete%></li>
-              <li><%= link_to 'HOME', inventor_path(current_user.id)%></li>
+            <% if logged_in?%>
+              <li><%=link_to'LOGOUT', logout_path, method: :delete%></li>
+              <li><%= link_to 'HOME', user_path(current_user.id)%></li>
               <li><%=link_to "INVENTIONS", inventions_path %></li>
               <li><%=link_to "INVESTMENTS", invention_investments_path %></li>
-            <% elsif investor_logged_in? %>
-              <li><%= link_to 'LOGOUT', investor_logout_path, method: :delete%></li>
-              <li><%= link_to 'HOME', investor_path(current_user.id)%></li>
-              <li><%=link_to "INVENTIONS", inventions_path %></li>
-              <li><%=link_to "INVESTMENTS", invention_investments_path %></li>
-            <% else %>
-
-          <% end %>
-
+            <% end %>
         </ul>
-
 
 <%=yield%>
   </body>

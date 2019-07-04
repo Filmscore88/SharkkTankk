@@ -1,5 +1,5 @@
 <h2>Invention: <%=@invention_investment.invention.name%></h2>
-<h3>Inventor: <%=@invention_investment.invention.inventor.user_name%></h3>
+<h3>Inventor: <%=@invention_investment.invention.user.name%></h3>
 <h3>Invested: $<%=@invention_investment.amount%> </h3><br/>
 
-<%= link_to 'create new', new_investor_invention_investment_path(@invention_investment.investor)%></br>
+<%= link_to 'create new', new_user_invention_investment_path(@invention_investment.user)%></br>

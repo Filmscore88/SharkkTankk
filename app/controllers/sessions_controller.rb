@@ -2,52 +2,31 @@ class SessionsController < ApplicationController
 
   def facebook_create
     if auth_hash= request.env["omniauth.auth"]
-	     inventor= Inventor.find_or_create_by(auth_hash)
-       start_inventor_session(inventor)
+	     user= User.find_or_create_by(auth_hash)
+       user.update(inventor: true)
+       start_session(user)
+
 	  else
-      render 'sessions/inventor_create'
+      render 'sessions/user_new'
     end
   end
 
 
-  def inventor_new
+  def user_new
 
   end
 
+  def user_destroy
+    logout
+  end
 
-  def inventor_create
-	   inventor= Inventor.find_by(user_name: params[:inventor][:user_name])
-	   if inventor && inventor.authenticate(params[:inventor][:password])
-		     start_inventor_session(inventor)
+  def user_create
+	   user= User.find_by(name: params[:user][:name])
+	   if user && user.authenticate(params[:user][:password])
+		     start_session(user)
 	   else
        flash[:notice]= 'ERROR: Account was not created'
-	     render 'sessions/inventor_new'
+	     render 'sessions/user_new'
 	   end
-  end
-
-
-  def inventor_destroy
-    restart_investor_session
-  end
-
-
-  def investor_new
-
-  end
-
-
-  def investor_create
-    investor=Investor.find_by(name: params[:investor][:name])
-    if investor && investor.authenticate(params[:investor][:password])
-      start_investor_session(investor)
-    else
-      flash[:notice]= 'ERROR: Account was not created'
-      render 'sessions/investor_new'
-    end
-  end
-
-
-  def investor_destroy
-    restart_investor_session
   end
 end

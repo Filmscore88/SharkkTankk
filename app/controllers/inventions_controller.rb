@@ -8,18 +8,18 @@ class InventionsController < ApplicationController
 
 
   def new
-    if params[:inventor_id].to_i != current_user.id
+    if params[:user_id].to_i != current_user.id
       redirect_to inventions_path
     else
-      @invention= Invention.new(inventor_id: params[:inventor_id])
+      @invention= Invention.new(user_id: params[:user_id])
     end
   end
 
   def create
-    @inventor= Inventor.find_by(id: params[:invention][:inventor_id])
-    @invention= @inventor.inventions.build(invention_params)
+    @user= User.find_by(id: params[:invention][:user_id])
+    @invention= @user.inventions.build(invention_params)
       if @invention.save
-        redirect_to inventor_invention_path(@inventor, @invention)
+        redirect_to user_invention_path(@user, @invention)
       else
         flash[:notice]= 'ERROR: Invalid Entry'
         render :new
@@ -35,6 +35,6 @@ class InventionsController < ApplicationController
   private
 
   def invention_params
-    params.require(:invention).permit(:name, :description, :inventor_id)
+    params.require(:invention).permit(:name, :description, :user_id)
   end
 end

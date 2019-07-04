@@ -2,7 +2,7 @@
 <%= form_for @invention_investment do |f| %>
   <%= f.label :amount %>
   <%= f.number_field :amount %><br/>
-  <%= f.hidden_field :investor_id %><br/>
+  <%= f.hidden_field :user_id %><br/>
   <%= f.collection_select :invention_id, Invention.all, :id, :name %><br/>
   <br/>
   <%= f.submit %>

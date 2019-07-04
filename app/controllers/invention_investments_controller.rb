@@ -8,23 +8,23 @@ class InventionInvestmentsController < ApplicationController
 
 
   def new
-    if params[:investor_id].to_i != current_user.id
+    if params[:user_id].to_i != current_user.id
       redirect_to invention_investments_path
     else
-      @invention_investment= InventionInvestment.new(investor_id: params[:investor_id])
+      @invention_investment= InventionInvestment.new(user_id: params[:user_id])
     end
   end
 
 
   def create
-    @investor= Investor.find_by(id: params[:invention_investment][:investor_id])
+    @user= User.find_by(id: params[:invention_investment][:user_id])
     @invention= Invention.find_by(id: params[:invention_investment][:invention_id])
     @invention.update(invested?: true)
     @invention.invention_investments.build(invention_investment_params)
-    @invention_investment= @investor.invention_investments.build(invention_investment_params)
+    @invention_investment= @user.invention_investments.build(invention_investment_params)
 
       if @invention_investment.save
-        redirect_to investor_invention_investment_path(@investor, @invention_investment)
+        redirect_to user_invention_investment_path(@user, @invention_investment)
       else
         flash[:notice]= 'ERROR: Invalid Entry'
         render :new
@@ -39,7 +39,7 @@ class InventionInvestmentsController < ApplicationController
   private
 
   def invention_investment_params
-    params.require(:invention_investment).permit(:amount, :investor_id, :invention_id)
+    params.require(:invention_investment).permit(:amount, :user_id, :invention_id)
   end
 
 end

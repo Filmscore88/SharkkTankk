@@ -14,26 +14,22 @@ ActiveRecord::Schema.define(version: 2019_06_11_145025) do
 
   create_table "invention_investments", force: :cascade do |t|
     t.integer "amount"
-    t.integer "investor_id"
+    t.integer "user_id"
     t.integer "invention_id"
   end
 
   create_table "inventions", force: :cascade do |t|
     t.string "name"
-    t.integer "inventor_id"
+    t.integer "user_id"
     t.string "description"
     t.boolean "invested?", default: false, null: false
   end
 
-  create_table "inventors", force: :cascade do |t|
-    t.string "user_name"
-    t.string "password_digest"
-  end
-
-  create_table "investors", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "email"
     t.string "password_digest"
+    t.boolean "investor"
+    t.boolean "inventor"
   end
 
 end

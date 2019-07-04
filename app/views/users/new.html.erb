@@ -1,0 +1,27 @@
+<h1>Users</h1>
+
+<div>
+  <h2>Sign Up With <%= link_to('Facebook', '/auth/facebook') %></h2>
+  <h2> Or <h2>
+  <h2> Create Account</h2>
+</div>
+
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br />
+  <%= f.label :password %>
+  <%= f.password_field :password %><br />
+  <div>
+  <%= label :inventor, "Inventor" %>
+  <%= f.radio_button :inventor, true , :checked => false , :value => true %></div>
+  <br>
+  <div>
+  <%= label :investor, "Investor" %>
+  <%= f.radio_button :investor, true , :checked => false , :value => true %></div>
+  <br>
+  <br />
+  <%= f.submit %>
+<% end %>
+</br>
+
+<p>Already have an Account? <%= link_to 'Login', signin_path %></p>

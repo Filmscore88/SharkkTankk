@@ -1,8 +1,8 @@
 <h1> Inventions</h1>
 <% @inventions.each do |i|%>
 <ul>
-  <li>Name: <%= link_to i.name, inventor_invention_path(i.inventor, i)%>
+  <li>Name: <%= link_to i.name, user_invention_path(i.user, i)%>
   <li>Description: <%= i.description%></li>
-  <li>Created by: <%= i.inventor.user_name%></li>
+  <li>Created by: <%= i.user.name%></li>
 </ul><br/>
 <%end%>

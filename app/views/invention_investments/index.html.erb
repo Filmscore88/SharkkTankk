@@ -3,8 +3,8 @@
 <% @invention_investments.each do |inv| %>
 <ul>
   <li>Invention: <%= link_to inv.invention.name, invention_path(inv.invention)%></li><br/>
-  <li>Inventor: <%= link_to inv.invention.inventor.user_name, inventor_path(inv.invention.inventor)%></li><br/>
+  <li>Inventor: <%= link_to inv.invention.user.name, user_path(inv.invention.user)%></li><br/>
   <li>Invested Amount:$ <%= link_to inv.amount, invention_investment_path(inv)%></li><br/>
-  <li>Investor: <%= link_to inv.investor.name, investor_path(inv.investor)%></li><br/>
+  <li>Investor: <%= link_to inv.user.name, user_path(inv.user)%></li><br/>
 </ul>
 <% end %>
